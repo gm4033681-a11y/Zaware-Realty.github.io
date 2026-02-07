@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaware Realty - Premier Real Estate Channel Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0f2337;
+            --gold: #c9a961;
+            --cream: #f4f1ea;
+            --slate: #4a5568;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 35, 55, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(15, 35, 55, 0.9), rgba(74, 85, 104, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230f2337" width="1200" height="800"/><g opacity="0.1"><circle cx="200" cy="200" r="300" fill="%23c9a961"/><circle cx="1000" cy="600" r="400" fill="%23c9a961"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(201, 169, 97, 0.1), transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 120px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--navy);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--slate);
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: var(--navy);
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--slate);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: var(--white);
+            padding: 30px;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 35px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 25px;
+            color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .service-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--slate);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%);
+            color: var(--white);
+        }
+
+        .why-choose .section-title,
+        .why-choose .section-subtitle {
+            color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 25px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            color: var(--gold);
+            min-width: 40px;
+        }
+
+        .feature-content h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .feature-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--cream);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            background: var(--navy);
+            color: var(--white);
+            padding: 50px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        .contact-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-item h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 30px;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            section {
+                padding: 80px 30px;
+            }
+
+            .about-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 20px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services-grid,
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        /* Page Display */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Zaware Realty</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')">Home</a></li>
+                <li><a onclick="showPage('about')">About</a></li>
+                <li><a onclick="showPage('services')">Services</a></li>
+                <li><a onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Gateway to Premium Real Estate</h1>
+                <p>Trusted channel partner connecting discerning clients with exceptional properties since 2018</p>
+                <button class="cta-button" onclick="showPage('contact')">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="about">
+            <div class="section-title">Proven Excellence</div>
+            <div class="section-subtitle">Building trust through consistent performance and client satisfaction</div>
+            
+            <div class="stats-container" style="max-width: 900px; margin: 0 auto;">
+                <div class="stat-box">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">₹100Cr+</div>
+                    <div class="stat-label">Sales Business</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Developer Partners</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services">
+            <div class="section-title">Our Specializations</div>
+            <div class="section-subtitle">Comprehensive real estate solutions tailored to your needs</div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Residential Properties</h3>
+                    <p>Premium apartments, luxury villas, and residential complexes in prime locations across major locations in Pune .</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Commercial Spaces</h3>
+                    <p>Office complexes, retail spaces, and business parks for corporate clients and entrepreneurs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Investment Advisory</h3>
+                    <p>Expert guidance on high-yield real estate investments with strong appreciation potential.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="cta-button" onclick="showPage('services')">Explore All Services</button>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose">
+            <div class="section-title">Why Choose Horizon</div>
+            <div class="section-subtitle">Your success is our priority</div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h4>Established Track Record</h4>
+                        <p>Six years of consistent excellence with 500+ successful client relationships and ₹100r+ sales business in facilitated transactions.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-content">
+                        <h4>Trusted Partnerships</h4>
+                        <p>Authorized channel partner for 200+ leading developers in Pune (Baner, Balewadi, Mahalunge, Hinjawadi, Wakad, Tathawade, Rawet, Kiwale, Pimple-Saudhagar, Moshi, Charoli, Kharadi).</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-content">
+                        <h4>Market Intelligence</h4>
+                        <p>Real-time insights on pricing trends, locality analysis, and investment opportunities backed by data.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <div class="feature-content">
+                        <h4>Personalized Service</h4>
+                        <p>Dedicated attention to understand your unique requirements and deliver tailored real estate solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="contact">
+            <div class="section-title">Ready to Find Your Perfect Property?</div>
+            <div class="section-subtitle">Let our experts guide you to the right investment</div>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="showPage('contact')">Contact Us Today</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div style="height: 80px;"></div>
+        
+        <section class="about">
+            <div class="section-title">About Zaware Realty</div>
+            <div class="section-subtitle">Your trusted real estate channel partner since 2018</div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Who We Are</h3>
+                    <p>Zaware Realty is a premier channel partner specializing in connecting discerning clients with exceptional real estate opportunities. Since our establishment in 2018, we have built an enviable reputation for delivering personalized service, market expertise, and unwavering commitment to client success.</p>
+                    
+                    <p>As an authorized channel partner for leading real estate developers and projects across major metropolitan areas, we serve as the trusted bridge between developers and end-clients, ensuring seamless transactions and superior outcomes for all stakeholders.</p>
+                    
+                    <p>Our team brings deep market knowledge, professional integrity, and a client-first approach to every engagement. We don't just facilitate property transactions; we forge lasting relationships built on trust, transparency, and exceptional results.</p>
+                </div>
+                
+                <div>
+                    <div style="background: var(--navy); color: white; padding: 50px; border-left: 5px solid var(--gold);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-bottom: 20px; color: var(--gold);">Our Mission</h3>
+                        <p style="font-size: 16px; line-height: 1.8; opacity: 0.95;">To empower clients with expert guidance and curated real estate solutions while maintaining the highest standards of integrity, transparency, and professional excellence in every partnership we forge.</p>
+                        
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; margin: 30px 0 20px 0; color: var(--gold);">Our Vision</h3>
+                        <p style="font-size: 16px; line-height: 1.8; opacity: 0.95; margin: 0;">To be recognized as the most trusted and preferred real estate channel partner, known for turning property aspirations into reality through unparalleled service and expertise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="section-title">Our Journey</div>
+            <div class="section-subtitle">Six years of growth, learning, and excellence</div>
+            
+            <div style="max-width: 800px; margin: 0 auto; line-height: 1.9; font-size: 16px; color: var(--slate);">
+                <p style="margin-bottom: 25px;">Founded in 2018 by a team of real estate professionals with a vision to transform how clients experience property investments, Zaware Realty began with a simple promise: to provide honest, expert guidance in an industry often lacking transparency.</p>
+                
+                <p style="margin-bottom: 25px;">Over the past six years, we have grown from serving individual homebuyers to managing relationships with corporate clients, NRI investors, and high-net-worth individuals. Our portfolio has expanded to include residential, commercial, and investment properties across five major metropolitan markets.</p>
+                
+                <p style="margin-bottom: 25px;">Today, with over 500+ satisfied clients and ₹100+ crores sales business in facilitated transactions, we continue to uphold the values that defined our beginning: integrity, expertise, and an unwavering commitment to client success. Our 45% repeat client rate and numerous referrals stand as testament to the trust we've built.</p>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <div class="section-title">Our Core Values</div>
+            <div class="section-subtitle">The principles that guide everything we do</div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-content">
+                        <h4>Integrity First</h4>
+                        <p>We believe in complete transparency, honest recommendations, and ethical practices in every client interaction.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-content">
+                        <h4>Expert Knowledge</h4>
+                        <p>Continuous learning and market research ensure we provide the most current and accurate guidance to our clients.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💼</div>
+                    <div class="feature-content">
+                        <h4>Client Success</h4>
+                        <p>Your goals become our mission. We measure our success by the satisfaction and prosperity of our clients.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌟</div>
+                    <div class="feature-content">
+                        <h4>Excellence Always</h4>
+                        <p>From the first consultation to post-sale support, we maintain the highest standards of professional service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div style="height: 80px;"></div>
+        
+        <section class="services">
+            <div class="section-title">Our Services</div>
+            <div class="section-subtitle">Comprehensive real estate solutions for every need</div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Residential Properties</h3>
+                    <p>From starter homes to luxury residences, we connect you with premium apartments, villas, and residential complexes in prime locations. Our portfolio includes properties across all major cities with options for every budget and lifestyle.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Commercial Spaces</h3>
+                    <p>Office complexes, retail spaces, co-working facilities, and business parks for entrepreneurs and corporate clients. We specialize in identifying commercial properties with high visibility, accessibility, and growth potential.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Investment Advisory</h3>
+                    <p>Expert guidance on real estate investments with strong appreciation potential. We analyze market trends, provide ROI projections, and identify opportunities for portfolio diversification through property investments.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>NRI Services</h3>
+                    <p>Specialized support for Non-Resident Indians looking to invest in Indian real estate. We handle everything from property search to documentation, making long-distance investments seamless and secure.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Documentation Support</h3>
+                    <p>Complete assistance with legal documentation, home loans, property registration, and all paperwork required for smooth property transactions. Our network includes trusted legal and financial partners.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔑</div>
+                    <h3>Post-Sale Assistance</h3>
+                    <p>Our relationship doesn't end at the sale. We provide continued support with possession, interior design connections, property management, and any post-purchase queries or concerns.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="section-title">Our Process</div>
+            <div class="section-subtitle">A structured approach to finding your perfect property</div>
+            
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="display: grid; gap: 30px;">
+                    <div style="background: white; padding: 40px; border-left: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px;">1. Initial Consultation</h3>
+                        <p style="color: var(--slate); line-height: 1.8;">We begin by understanding your requirements, budget, preferred locations, and investment goals through a detailed consultation. This helps us curate options that truly match your needs.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 40px; border-left: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px;">2. Property Curation</h3>
+                        <p style="color: var(--slate); line-height: 1.8;">Based on your criteria, we present a curated selection of properties from our network of 25+ developer partners. Each option comes with complete details, pricing, and our honest assessment.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 40px; border-left: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px;">3. Site Visits</h3>
+                        <p style="color: var(--slate); line-height: 1.8;">We arrange and accompany you on site visits, providing insights about the locality, infrastructure, future development plans, and helping you evaluate each property thoroughly.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 40px; border-left: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px;">4. Negotiation & Documentation</h3>
+                        <p style="color: var(--slate); line-height: 1.8;">Once you've made your choice, we assist with price negotiations, payment terms, and handle all documentation including agreements, registrations, and loan processing if required.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 40px; border-left: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px;">5. Ongoing Support</h3>
+                        <p style="color: var(--slate); line-height: 1.8;">We remain available for any questions, coordinate with developers for possession, and provide continued assistance even after you've moved into your new property.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <div class="section-title">Coverage Areas</div>
+            <div class="section-subtitle">Serving clients across major major locations in Pune</div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-content">
+                        <h4>Mumbai & MMR</h4>
+                        <p>Premium properties across Major locations in Pune (Baner, Balewadi, Mahalunge, Hinjawadi, Wakad, Tathawade, Rawet, Kiwale, Pimple-Saudhagar, Moshi, Charoli, Kharadi).</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-content">
+                        <h4>Pune & Surrounds</h4>
+                        <p>Residential and commercial spaces in Pune, Pimpri-Chinchwad, and emerging localities around the city.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-content">
+                        <h4>Bangalore</h4>
+                        <p>IT corridor properties, residential complexes, and investment opportunities across India's Silicon Valley.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div style="height: 80px;"></div>
+        
+        <section class="contact">
+            <div class="section-title">Get In Touch</div>
+            <div class="section-subtitle">Let's discuss how we can help you find your perfect property</div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <h4>Corporate Office</h4>
+                        <p>Moshi, Pune<br>
+                        MG Road, Pune - 411001<br>
+                        Maharashtra, India</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p>+91-9021128400</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>zawareravindra@gmail.com</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Business Hours</h4>
+                        <p>Monday - Sunday: 9:00 AM - 11:00 PM<br>
+                        Sunday: By Appointment</p>
+                    </div>
+                    
+                    <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <p style="font-size: 15px; line-height: 1.7; opacity: 0.9;">We typically respond to all inquiries within 24 hours. For urgent matters, please call us directly.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div id="successMessage" class="success-message">
+                        Thank you for your inquiry! We'll get back to you within 24 hours.
+                    </div>
+                    
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyType">Property Interest *</label>
+                            <select id="propertyType" name="propertyType" required>
+                                <option value="">Select Property Type</option>
+                                <option value="residential">Residential - Apartment/Villa</option>
+                                <option value="commercial">Commercial - Office/Retail</option>
+                                <option value="investment">Investment Properties</option>
+                                <option value="nri">NRI Investment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select Budget</option>
+                                    <option value="under50">Under ₹50 Lakhs</option>
+                                    <option value="50to1cr">₹50 Lakhs - ₹1 Crore</option>
+                                    <option value="1to2cr">₹1 Crore - ₹2 Crore</option>
+                                    <option value="2to5cr">₹2 Crore - ₹5 Crore</option>
+                                    <option value="above5cr">Above ₹5 Crore</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Preferred Location</label>
+                                <select id="location" name="location">
+                                    <option value="">Select Location</option>
+                                    <option value="Baner">Baner</option>
+                                    <option value="Balewadi">Balewadi</option>
+                                    <option value="Mahalunge">Mahalunge</option>
+                                    <option value="Hinjewadi">Hinjewadi</option>
+                                    <option value="Wakad">Wakad</option>
+                                    <option value="Tathawade">Tathawade</option>
+                                    <option value="Ravet">Ravet</option>
+                                    <option value="Pimple Saudhagar">Pimple Saudhagar</option>
+                                    <option value="Moshi">Moshi</option>
+                                    <option value="Charoli">Charoli</option>
+                                    <option value="Kharadi">Kharadi</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message / Requirements</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements, preferred amenities, timeline, or any specific questions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="logo" style="margin-bottom: 20px; font-size: 32px;">Zaware Realty</div>
+            <p style="margin-bottom: 15px;">Your Trusted Real Estate Channel Partner</p>
+            <p style="font-size: 13px; opacity: 0.7;">© 2025 Zaware Realty. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // In a real implementation, you would send the form data to a server
+            console.log('Form submitted');
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
